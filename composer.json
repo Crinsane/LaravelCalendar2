@@ -1,0 +1,22 @@
+{
+    "name": "gloudemans/laravel-calendar",
+    "description": "",
+    "authors": [
+        {
+            "name": "Rob Gloudemans",
+            "email": "rob@matas.nl"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "~4",
+        "nesbot/carbon": "~1.0",
+        "mustache/mustache": "~2.5"
+    },
+    "autoload": {
+        "psr-0": {
+            "Gloudemans\\LaravelCalendar": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}

@@ -1,0 +1,1 @@
+<td class="laravel-calendar-cell-empty">&nbsp;</td>
