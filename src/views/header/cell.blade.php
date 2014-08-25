@@ -1,3 +1,3 @@
 <th>
-	<span>{{ $day->formatLocalized('%A') }}</span>
+	<span>{{ $day->formatLocalized('%a') }}</span>
 </th>

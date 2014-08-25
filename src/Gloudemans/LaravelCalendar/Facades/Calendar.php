@@ -1,4 +1,4 @@
-<?php namespace Gloudemans\LaravelCalendar;
+<?php namespace Gloudemans\LaravelCalendar\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

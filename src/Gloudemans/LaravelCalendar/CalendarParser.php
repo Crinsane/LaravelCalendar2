@@ -5,6 +5,18 @@ use Carbon\Carbon;
 
 class CalendarParser {
 
+	/**
+	 * Instance of the View Factory
+	 *
+	 * @var Illuminate\View\Factory
+	 */
+	protected $view;
+
+	/**
+	 * Calendar Parser Constructor
+	 *
+	 * @param Illuminate\View\Factory  $view
+	 */
 	public function __construct(Factory $view)
 	{
 		$this->view = $view;
@@ -30,6 +42,32 @@ class CalendarParser {
 		$data = compact('body', 'header');
 
 		return $this->renderCalendarView('calendar', $data);
+	}
+
+	/**
+	 * Generate the previous link
+	 *
+	 * @param  Carbon\Carbon  $day
+	 * @return string
+	 */
+	public function generatePrevLink($day)
+	{
+		$prevMonth = $day->copy()->subMonth();
+
+		return $this->generateLink($prevMonth->year, $prevMonth->month);
+	}
+
+	/**
+	 * Generate the next link
+	 *
+	 * @param  Carbon\Carbon  $day
+	 * @return string
+	 */
+	public function generateNextLink($day)
+	{
+		$nextMonth = $day->copy()->addMonth();
+
+		return $this->generateLink($nextMonth->year, $nextMonth->month);
 	}
 
 	/**
@@ -197,32 +235,6 @@ class CalendarParser {
 	}
 
 	/**
-	 * Generate the previous link
-	 *
-	 * @param  Carbon\Carbon  $day
-	 * @return string
-	 */
-	protected function generatePrevLink($day)
-	{
-		$prevMonth = $day->copy()->subMonth();
-
-		return $this->generateLink($prevMonth->year, $prevMonth->month);
-	}
-
-	/**
-	 * Generate the next link
-	 *
-	 * @param  Carbon\Carbon  $day
-	 * @return string
-	 */
-	protected function generateNextLink($day)
-	{
-		$nextMonth = $day->copy()->addMonth();
-
-		return $this->generateLink($nextMonth->year, $nextMonth->month);
-	}
-
-	/**
 	 * Generate a link for the navigation
 	 *
 	 * @param  int  $year
@@ -231,7 +243,7 @@ class CalendarParser {
 	 */
 	protected function generateLink($year, $month)
 	{
-		return '?year=' . $year . '&month=' . $month;
+		return \URL::current() . '?' . http_build_query(compact('year', 'month'));
 	}
 
 	/**

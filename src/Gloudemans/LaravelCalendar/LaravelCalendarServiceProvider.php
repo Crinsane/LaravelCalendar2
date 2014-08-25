@@ -22,7 +22,7 @@ class LaravelCalendarServiceProvider extends ServiceProvider {
 
 		$this->app['calendar'] = $this->app->share(function($app)
 		{
-			return new CalendarGenerator;
+			return $app->make('Gloudemans\LaravelCalendar\CalendarGenerator');
 		});
 	}
 

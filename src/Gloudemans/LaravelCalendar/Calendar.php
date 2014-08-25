@@ -127,6 +127,16 @@ class Calendar {
 		return $this->events;
 	}
 
+	public function prevLink()
+	{
+		return $this->parser->generatePrevLink(head($this->days));
+	}
+
+	public function nextLink()
+	{
+		return $this->parser->generateNextLink(head($this->days));
+	}
+
 	/**
 	 * Dump the calendar to the screen
 	 *

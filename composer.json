@@ -4,14 +4,14 @@
     "authors": [
         {
             "name": "Rob Gloudemans",
-            "email": "rob@matas.nl"
+            "email": "Rob_Gloudemans@hotmail.com"
         }
     ],
     "require": {
         "php": ">=5.4.0",
         "illuminate/support": "~4",
-        "nesbot/carbon": "~1.0",
-        "mustache/mustache": "~2.5"
+        "illuminate/view": "~4",
+        "nesbot/carbon": "~1.0"
     },
     "autoload": {
         "psr-0": {

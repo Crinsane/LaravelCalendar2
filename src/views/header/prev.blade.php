@@ -1,3 +1,3 @@
 <th class="laravel-calendar-prev-cell">
-	<a href="{{ $prev }}" class="btn btn-primary btn-block">&laquo;</a>
+	<a href="{{ $prev }}">&laquo;</a>
 </th>
